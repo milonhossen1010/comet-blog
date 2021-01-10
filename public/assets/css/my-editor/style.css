@@ -1,0 +1,90 @@
+/*
+    My editor css
+*/
+
+#mydiv {
+    position: absolute;
+    z-index: 9;
+    background-color: #fff;
+    border: 1px solid #d3d3d3;
+    width: 300px;
+    display: none;
+    box-shadow: 0 5px 30px rgba(43,135,218,.2);
+    border-radius: 6px;
+    transform: scale(0);
+    z-index: 99999999999999999;
+
+
+  }
+  
+.my-editor-header {
+    padding: 10px;
+    cursor: move;
+    z-index: 10;
+    background-color: #2196F3;
+    color: #fff;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 600;
+    border-radius: 3px 3px 0px 0px;
+  }
+
+
+  #mydiv .color{
+      height: 26px;
+      width: 26px;
+      padding: 0px;
+      border-radius: 26px;
+      overflow: hidden;
+      border: none;
+  }
+
+  #mydiv label {
+    color: #32373c;
+    font-size: 14px;
+    font-weight: 600;
+  }
+
+  #mydiv .btn-green {
+    background: #29c4a9;
+    color: #fff;
+    border-radius: 0%;
+  }
+
+  #mydiv .btn-red {
+    background: #ef5555;
+    color: #fff;
+    border-radius: 0%;
+  }
+
+  #mydiv input, #mydiv textarea {
+    background-color: #F1F5F9 !important;
+    border-color: #F1F5F9 !important;
+    color: #000000 !important;
+  }
+
+  
+  #mydiv .qty-box .btn-primary {
+    background-color: transparent !important;
+    border: 1px solid #ddd !important;
+  }
+
+  #mydiv .qty-box input {
+    border-color: #ddd !important;
+    
+  }
+
+  .my-editor #accordion h5 {
+    font-size: 20px;
+    font-weight: 400;
+    color: #a3b0c2;
+    padding: 15px 0;
+    border-bottom: 1px solid #f1f5f9;
+    cursor: pointer;
+  }
+
+  .my-editor .w-30 {
+    width: 30%;
+  }
+
+ 

@@ -1,0 +1,25 @@
+.img-size-fix {
+
+    object-fit: cover;
+}
+
+.img-size-fix.img-60 {
+    height: 60px;
+}
+
+.img-size-fix.img-90 {
+    height: 90px;
+}
+
+.img-size-fix.img-50 {
+    height: 50px;
+}
+
+.action a {
+	font-size: 20px;
+	padding: 5px;
+}
+
+.active-user {
+    border: 2px solid #ff8084;
+}
