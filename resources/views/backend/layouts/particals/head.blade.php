@@ -46,6 +46,9 @@
      <!-- jsgrid css-->
      <link rel="stylesheet" type="text/css" href="{{ asset('/') }}assets/css/jsgrid.css">
 
+    <!-- lobibox-master css-->
+    <link rel="stylesheet" type="text/css" href="{{ asset('/') }}assets/css/lobibox.min.css">
+
     <!-- Toastr css-->
     <link rel="stylesheet" type="text/css" href="{{ asset('/') }}assets/css/toastr.min.css">
 

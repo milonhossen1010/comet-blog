@@ -42,12 +42,14 @@
                                 <td style="width: 100px;" class="jsgrid-cell">{{ $user->email }}</td>
                                 <td style="width: 100px;" class="jsgrid-cell">{{ Str::ucfirst($user->role) }}</td>
                                 <td style="width: 100px;" class="jsgrid-cell action">
+                                    
+                                    {{-- /User id checking and Edit --}}
                                     <a class=" " href="  @if (Auth::user()->id == $user->id)
                                         {{ route('profile.index') }}
                                   @else
                                         {{ route('user.edit', $user->id) }}
                                   @endif"><i class="fa fa-pencil" aria-hidden="true"></i></a>
-                                    <a class=" " href="{{ route('user.delete', $user -> id) }}"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+                                    <a class="delete_notification" href="{{ route('user.delete', $user -> id) }}"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
                                 </td>
                             </tr>
                             @endforeach

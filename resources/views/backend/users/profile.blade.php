@@ -3,9 +3,6 @@
 @section('main')
  
 
-    @php
-      
-    @endphp
     
 
     <!-- Container-fluid starts-->
@@ -157,7 +154,7 @@
                                     <form action="{{ route('profile.delete') }}" method="POST">
                                         @csrf
                                         <input name="user_id" value="{{ $user->id }}" type="hidden">
-                                        <button type="submit" class="btn btn-primary">Delete Account</button>
+                                        <button  type="submit" class="delete_notification btn btn-primary">Delete Account</button>
                                     </form>
                                     
                                 </div>

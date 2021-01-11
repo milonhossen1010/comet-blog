@@ -25,6 +25,7 @@ class UsersController extends Controller
         $uer_id = Auth::user()->id;
         $user = User::find($uer_id);
 
+        //User name mange function
         if ($user -> username !== $request->username){
             $this -> validate($request,[
                 'username' => 'unique:users'
@@ -35,10 +36,8 @@ class UsersController extends Controller
         //password fill up check 
         if ($request->password==true) {
             $password = $request -> password;
-         }else{
-             $password = $user->password;
+            $user -> password = Hash::make($password);
          }
-
          
 
       
@@ -70,7 +69,6 @@ class UsersController extends Controller
         $user -> username = $request -> username;
         $user -> email = $request -> email;
         $user -> bio = $request -> bio;
-        $user -> password = Hash::make($password);
         $user -> img = $profile_pic;
         $user -> update();
 
@@ -95,7 +93,7 @@ class UsersController extends Controller
                unlink($profile_path);
            }
         }
-        
+
         $user -> delete();
         return redirect()->route("login")->with("success","Account deleted successful!");
      }
@@ -122,19 +120,18 @@ class UsersController extends Controller
        $user_id = $request->id;
        $user = User::find($user_id);
 
-         //password fill up check 
-         if ($request->password==true) {
+          //password fill up check 
+          if ($request->password==true) {
             $password = $request -> password;
-         }else{
-             $password = $user->password;
+            $user -> password = Hash::make($password);
          }
+         
 
         $user -> first_name = $request -> first_name;
         $user -> last_name = $request -> last_name;
         $user -> username = $request -> username;
         $user -> role = $request -> role;
         $user -> email = $request -> email;
-        $user -> password = Hash::make($password);
         $user -> update();
 
         return redirect()->back()->with('success','Update successful!');
@@ -155,9 +152,9 @@ class UsersController extends Controller
            }
         }
 
-        $user -> delete();
+    //    $user -> delete();
  
-        return redirect()->back()->with('success','User delete successful!!');
+    //    return redirect()->back()->with('success','User delete successful!!');
      }
 
 

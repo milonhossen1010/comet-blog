@@ -27,7 +27,7 @@ Route::resource('post-category', 'App\Http\Controllers\PostCategoryController')-
 Route::get('/', 'App\Http\Controllers\FrontendController@index')->name('frontend.index');
 
 //Settings
-Route::group(['prefix' => 'settings','middleware'=>'usercheck', 'middleware'=>'userrolecheck', 'namespace' => 'App\Http\Controllers'], function () {
+Route::group(['prefix' => 'settings', 'middleware'=>'userrolecheck', 'namespace' => 'App\Http\Controllers'], function () {
     Route::get("change-logo","SettingsController@logoIndex")->name('logo.index');
     Route::put('change-logo', 'SettingsController@updateLogo')->name('logo.update');
     Route::get('social', 'SettingsController@socialIndex')->name('social.index');
@@ -43,14 +43,15 @@ Route::group(['prefix' => 'settings','middleware'=>'usercheck', 'middleware'=>'u
 
 
 //Homepage 
-Route::group(['prefix' => 'homepage', 'middleware' => 'usercheck', 'middleware' => 'userrolecheck', 'namespace' => 'App\Http\Controllers'], function () {
+Route::group(['prefix' => 'homepage', 'middleware' => 'userrolecheck', 'namespace' => 'App\Http\Controllers'], function () {
     Route::get('about', 'HomepageController@aboutIndex')->name('about.index');
     Route::put('about', 'HomepageController@aboutUpdate')->name('about.update');
+    Route::get('slider', 'HomepageController@sliderIndex')->name('slider.index');
 });
 
 
 //Users 
-Route::group(['prefix' => 'user', 'middleware' => 'usercheck', 'namespace' => 'App\Http\Controllers'], function () {
+Route::group(['prefix' => 'user','middleware' => 'usercheck', 'namespace' => 'App\Http\Controllers'], function () {
     Route::get("profile","UsersController@profileIndex")->name('profile.index');
     Route::put("profile-update","UsersController@profileEdit")->name('profile.edit');
     Route::post("profile-delete","UsersController@profileDelete")->name('profile.delete');

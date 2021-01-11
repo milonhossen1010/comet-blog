@@ -41,4 +41,11 @@ class HomepageController extends Controller
 
         return redirect()->back()->with('success','Update successful!');
     }
+
+
+    public function sliderIndex()
+    {
+        
+        return view('backend.pages.home.slider');
+    }
 }

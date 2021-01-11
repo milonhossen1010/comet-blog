@@ -46,7 +46,7 @@
                             </select>
                         </div>
                         <div class="form-group row">
-                            <input value="{{ $user->id }}" name="user_id" type="hidden">
+                            
                             <label for="validationCustom3" class="col-xl-3 col-md-4"><span class=" text-white">*</span>Change Password</label>
                             <input name="password" class="form-control col-xl-8 col-md-7" id="validationCustom3" type="password" >
                         </div>

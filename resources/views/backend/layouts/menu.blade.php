@@ -43,7 +43,7 @@
 					<span>Home Page</span><i class="fa fa-angle-right pull-right"></i>
 				</a>
 				<ul class="sidebar-submenu">
-					<li class=""><a class="" href="#"><i class="fa fa-circle"></i>Slider</a></li>
+					<li class=""><a class="" href="{{ route('slider.index') }}"><i class="fa fa-circle"></i>Slider</a></li>
 					<li class="{{ ($route=='about.index')? 'active' :'' }}"><a class="{{ ($route=='about.index') ? 'active' : '' }}" href="{{ route('about.index') }}"><i class="fa fa-circle"></i>About</a></li>
 					<li class=""><a class="" href="#"><i class="fa fa-circle"></i>Expertise</a></li>
 					<li class=""><a class="" href="#"><i class="fa fa-circle"></i>Vision</a></li>
