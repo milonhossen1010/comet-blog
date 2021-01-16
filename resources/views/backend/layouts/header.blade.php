@@ -88,8 +88,8 @@
                     </div>
                     <ul class="profile-dropdown onhover-show-div p-20 profile-dropdown-hover">
                         <li><a href="{{ route('profile.index') }}"><i data-feather="user"></i>Edit Profile</a></li>
-                        <li><a href="#"><i data-feather="mail"></i>Inbox</a></li>
-                        <li><a href="#"><i data-feather="lock"></i>Lock Screen</a></li>
+                        {{-- <li><a href="#"><i data-feather="mail"></i>Inbox</a></li>
+                        <li><a href="#"><i data-feather="lock"></i>Lock Screen</a></li> --}}
                         <li><a href="{{ route('logo.index') }}"><i data-feather="settings"></i>Settings</a></li>
                         <li><a href="#" class="logout-btn"><i data-feather="log-out"></i>Logout</a></li>
                     </ul>

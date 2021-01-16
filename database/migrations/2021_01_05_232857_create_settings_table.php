@@ -15,12 +15,12 @@ class CreateSettingsTable extends Migration
     {
         Schema::create('settings', function (Blueprint $table) {
             $table->id();
-            $table->string('logo')->nullable();
+            $table->longText('logo')-> nullable();
             $table->string('logo_width')->default('100px');
-            $table->string('clients')->nullable();
-            $table->string('social')->nullable();
+            $table->longText('clients')-> nullable();
+            $table->longText('social')-> nullable();
             $table->string('crt')->default('© 2015 Comet Agency.');
-            $table->string('site_identity')->default('The website develop by Milon');
+            $table->longText('site_identity')-> nullable();
             $table->timestamps();
         });
     }

@@ -20,7 +20,7 @@ class CheckUser
         if(Auth::check()){
             return $next($request);
         }else{
-            return redirect('/login');
+            return redirect()->back()->with('error', 'You will not be able to access this page.');
         }
        
     }

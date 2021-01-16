@@ -152,9 +152,9 @@ class UsersController extends Controller
            }
         }
 
-    //    $user -> delete();
+       $user -> delete();
  
-    //    return redirect()->back()->with('success','User delete successful!!');
+       return redirect()->back()->with('success','User delete successful!!');
      }
 
 

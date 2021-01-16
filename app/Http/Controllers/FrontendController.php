@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Slider;
 use App\Models\Homepage;
 use App\Models\settings;
 use Illuminate\Http\Request;
@@ -12,9 +13,12 @@ class FrontendController extends Controller
     {
         $settings = settings::find(1);
         $homepage = Homepage::find(1);
-        return view('frontend.comet.index', [
+        $slider = Slider::find(5);
+       
+        return view('frontend.home', [
             'settings' => $settings, 
             'homepage' => $homepage, 
+            'slider' => $slider, 
         ]);
     }
 }

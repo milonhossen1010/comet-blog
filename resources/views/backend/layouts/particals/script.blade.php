@@ -70,6 +70,9 @@
  <!-- Toastr js-->
  <script src="{{ asset('/') }}assets/js/toastr.min.js"></script>
 
+ <!-- Drag and Drop js-->
+ <script src="{{ asset('/') }}assets/js/drag-and-drop/script.js"></script>
+
  <!-- lobibox-master -->
  <script src="{{ asset('/') }}assets/js/lobibox/lobibox.js"></script>
  <script src="{{ asset('/') }}assets/js/lobibox/messageboxes.js"></script>

@@ -23,3 +23,44 @@
 .active-user {
     border: 2px solid #ff8084;
 }
+
+
+.ratio_asos .cus::before {
+	padding-top: 86.778%;
+	content: "";
+	display: block;
+}
+
+.duplicate-close {
+    float:right;
+
+}
+.duplicate-close a {
+    color: #222;
+    padding: 5px;
+    text-shadow: 0 1px 0 #fff;
+    opacity: .5;
+}
+
+.duplicate-close a:hover {
+    opacity: 1;
+}
+
+.custom-card {
+    border: none !important; 
+    border-radius: 6px !important;
+    border: 1px solid #ddd !important;
+}
+
+#accordion .card .card-body {
+	border: 1px solid #ddd;
+	border-top: none;
+	border-radius: 6px;
+}
+
+.slider_view li a {
+    color: #222;
+}
+
+ 
+ 

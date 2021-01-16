@@ -46,7 +46,6 @@ Route::group(['prefix' => 'settings', 'middleware'=>'userrolecheck', 'namespace'
 Route::group(['prefix' => 'homepage', 'middleware' => 'userrolecheck', 'namespace' => 'App\Http\Controllers'], function () {
     Route::get('about', 'HomepageController@aboutIndex')->name('about.index');
     Route::put('about', 'HomepageController@aboutUpdate')->name('about.update');
-    Route::get('slider', 'HomepageController@sliderIndex')->name('slider.index');
 });
 
 
@@ -60,3 +59,17 @@ Route::group(['prefix' => 'user','middleware' => 'usercheck', 'namespace' => 'Ap
     Route::put('update','UsersController@userUpdate')->name('user.update');
     Route::get('user-delete/{id}', 'UsersController@userDelete')->name('user.delete')->middleware('userrolecheck');
 });
+
+
+//Slider Controller
+Route::group(['prefix' => 'slider', 'namespace' => 'App\Http\Controllers', 'middleware' => 'userrolecheck'], function () {
+    Route::get('slider', 'SliderController@sliderIndex')->name('slider.index');
+    Route::post('create', 'SliderController@store')->name('slider.store');
+    Route::get('view/{id}','SliderController@sliderPreviewId')->name('slider.preview');
+   // Route::get('sliderView','SliderController@sliderView')->name('slider.view');
+    Route::get('delete/{id}','SliderController@delete')->name('slider.delete');
+    Route::get('edit/{id}', 'SliderController@edit')->name('slider.edit');
+    Route::put('update','SliderController@update')->name('slider.update');
+});
+
+

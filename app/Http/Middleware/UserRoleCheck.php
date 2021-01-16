@@ -24,7 +24,7 @@ class UserRoleCheck
                 return redirect()->back()->with("error","আপনি এটি সম্পাদনা করতে পারবেন না !!");
             }
         }else{
-            return redirect('/login');
+            return redirect()->route('login')->with('error', 'You will not be able to access this page.');
         }
     }
 }

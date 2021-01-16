@@ -34,7 +34,7 @@
 						<path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
 						<polyline points="9 22 9 12 15 12 15 22"></polyline>
 					</svg><span>Dashboard</span>
-				</a>
+			</a>
 			</li>
 
 			<li class="{{ ($route=='about.index') ? 'active' : ''}} {{ (Auth::user()->role!=='administrator') ? 'd-none' : ''  }}">
@@ -43,7 +43,7 @@
 					<span>Home Page</span><i class="fa fa-angle-right pull-right"></i>
 				</a>
 				<ul class="sidebar-submenu">
-					<li class=""><a class="" href="{{ route('slider.index') }}"><i class="fa fa-circle"></i>Slider</a></li>
+					
 					<li class="{{ ($route=='about.index')? 'active' :'' }}"><a class="{{ ($route=='about.index') ? 'active' : '' }}" href="{{ route('about.index') }}"><i class="fa fa-circle"></i>About</a></li>
 					<li class=""><a class="" href="#"><i class="fa fa-circle"></i>Expertise</a></li>
 					<li class=""><a class="" href="#"><i class="fa fa-circle"></i>Vision</a></li>
@@ -85,6 +85,18 @@
 					<li class="{{ ($route=='profile.index')? 'active' : '' }}"><a class="{{ ($route=='profile.index')? 'active' : '' }}" href="{{ route('profile.index') }}"><i class="fa fa-circle"></i>Profile</a></li>
 					<li class="{{ ($route=='all-users.index')? 'active' : '' }}"><a class="{{ ($route=='all-users.index')? 'active' : '' }}" href="{{ route('all-users.index') }}"><i class="fa fa-circle"></i>All Users</a></li>
 					
+				</ul>
+			</li>
+
+			<li class="{{ ($route=='slider.index') ? 'active' : ''}} {{ (Auth::user()->role!=='administrator') ? 'd-none' : ''  }}">
+				<a class="sidebar-header" href="">
+					<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-archive"><polyline points="21 8 21 21 3 21 3 8"></polyline><rect x="1" y="3" width="22" height="5"></rect><line x1="10" y1="12" x2="14" y2="12"></line></svg>
+					<span>Sliders</span><i class="fa fa-angle-right pull-right"></i>
+				</a>
+				<ul class="sidebar-submenu">
+					<li class=""><a class="" href=""><i class="fa fa-circle"></i>All Sliders</a></li>
+					<li class="{{ ($route=='slider.index')? 'actice' : '' }}"><a class="{{ ($route=='slider.index')? 'active' : '' }}" href="{{ route('slider.index') }}"><i class="fa fa-circle"></i>Add New Slider</a></li>
+				
 				</ul>
 			</li>
 		
