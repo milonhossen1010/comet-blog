@@ -11,7 +11,7 @@ class SliderController extends Controller
     //Slider view
     public function sliderIndex()
     {
-        $sliders = Slider::all();
+        $sliders = Slider::latest()->get();
         return view('backend.sliders.slider', compact('sliders'));
     }
 
@@ -134,8 +134,16 @@ class SliderController extends Controller
 
 
 
-
-
+    /**
+     * Image slider function
+     *
+     * @param Request $request
+     * @return void
+     */
+    public function imgSliderCreate(Request $request)
+    {
+        return $request -> all();
+    }
 
 
 

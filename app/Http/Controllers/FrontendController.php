@@ -13,8 +13,11 @@ class FrontendController extends Controller
     {
         $settings = settings::find(1);
         $homepage = Homepage::find(1);
-        $slider = Slider::find(5);
-       
+
+        //slider id pass
+        $slider_id = $homepage -> slider;
+        $slider = Slider::find($slider_id);
+        
         return view('frontend.home', [
             'settings' => $settings, 
             'homepage' => $homepage, 

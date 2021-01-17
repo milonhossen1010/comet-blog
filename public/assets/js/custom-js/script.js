@@ -5,56 +5,29 @@
             $("#logout-form").submit();
         });
 
+        
+        //Img Preview Function
+        function imgPreviewFunction(id, load_url) {
+            $(id).change(function (e) {
+                let file_url = URL.createObjectURL(e.target.files[0]);
+    
+                $(load_url).attr('src', file_url);
+            });
+    
+        }
 
         //Logo load
-        $('#dark-logo').change(function (e) {
-            let file_url = URL.createObjectURL(e.target.files[0]);
-
-            $('#dark-logo-load').attr('src', file_url);
-        });
-
-        $('#light-logo').change(function (e) {
-            let file_url = URL.createObjectURL(e.target.files[0]);
-
-            $('#light-logo-load').attr('src', file_url);
-        });
-
+        imgPreviewFunction('#dark-logo', '#dark-logo-load');
+        imgPreviewFunction('#light-logo', '#light-logo-load');
+        
         //Client image show
-        $('#cl1').change(function (e) {
-            let file_url = URL.createObjectURL(e.target.files[0]);
-
-            $('#cl1-load').attr('src', file_url);
-        });
-
-        $('#cl2').change(function (e) {
-            let file_url = URL.createObjectURL(e.target.files[0]);
-
-            $('#cl2-load').attr('src', file_url);
-        });
-
-        $('#cl3').change(function (e) {
-            let file_url = URL.createObjectURL(e.target.files[0]);
-
-            $('#cl3-load').attr('src', file_url);
-        });
-
-        $('#cl4').change(function (e) {
-            let file_url = URL.createObjectURL(e.target.files[0]);
-
-            $('#cl4-load').attr('src', file_url);
-        });
-
-        $('#cl5').change(function (e) {
-            let file_url = URL.createObjectURL(e.target.files[0]);
-
-            $('#cl5-load').attr('src', file_url);
-        });
-
-        $('#cl6').change(function (e) {
-            let file_url = URL.createObjectURL(e.target.files[0]);
-
-            $('#cl6-load').attr('src', file_url);
-        });
+        imgPreviewFunction('#cl1', '#cl1-load');
+        imgPreviewFunction('#cl2', '#cl2-load');
+        imgPreviewFunction('#cl3', '#cl3-load');
+        imgPreviewFunction('#cl4', '#cl4-load');
+        imgPreviewFunction('#cl5', '#cl5-load');
+        imgPreviewFunction('#cl6', '#cl6-load');
+       
 
 
 
@@ -106,7 +79,7 @@
                 '    </div>' +
                 '</div>');
 
-            myFunction();
+            draggable();
 
 
         });
@@ -201,14 +174,10 @@
         });
 
         
-        //Slider
+        //Slider edit js 
         $(document).on('click', '#modal-add-slide', function (e) {
             e.preventDefault();
             let rand = Math.floor(Math.random() * 1000);
-
-
-
-
 
             $(".modal_slider_content").append('<div class="draggable card" draggable="true" id="slide-card-' + rand + '"  >' +
                 '    <div data-parent="#accordion" class="card-header custom-card" style="padding: 25px; cursor: pointer;" data-toggle="collapse"' +
@@ -249,7 +218,7 @@
                 '    </div>' +
                 '</div>');
 
-            myFunction();
+            // draggable();
 
 
         });
@@ -316,23 +285,92 @@
 
 
 
-        /**
-         * Slider  preview
-         */
-        //Slider preview
-        // $(document).on('click', '#slider_preview', function (e) {
-        //     e.preventDefault();
-        //     let view_id = $(this).attr('slider_preview');
-            
 
-        //     $.ajax({
-        //         url: "/slider/view/" + view_id, 
-        //         success: function (data) {
-        //           $('#demo').html(data);
-        //         }
-        //     });
-        //     $('#slider-view-modal').modal('show');
-        // });
+
+
+/**
+ * Image slider js code
+ */
+
+        //Slider
+        $(document).on('click', '#add-img-slide', function (e) {
+            e.preventDefault();
+            let rand = Math.floor(Math.random() * 1000);
+
+
+
+
+
+            $(".img-slider-container").append('<div class="draggable card" draggable="true" id="slide-card-' + rand + '"  >' +
+                '    <div data-parent="#accordion" class="card-header custom-card" style="padding: 25px; cursor: pointer;" data-toggle="collapse"' +
+                '        data-target="#slide-' + rand + '">' +
+                '        <h4 class=" mb-0 " style="color:#ff8084">Slide-' + rand + '<Span class="duplicate-close "><a id="slide-duplicate" class="' + rand + '" duplicate_id="' + rand + '" href="#"><i class="fa fa-files-o" aria-hidden="true"></i></a><a href="#" remove_id="' + rand + '"' +
+                '                id="slide-remove-btn" ><i class="fa fa-times" aria-hidden="true"></i></a></Span></h4>' +
+                '    </div>' +
+                '    <div id="slide-' + rand + '" class="card-body collapse ">' +
+                '        <div class="form">' +
+                '            <div class="form-group mb-3 row"><label for="validationCustom01"  class="col-xl-3 col-sm-4 mb-0">Title' +
+                '                    :</label><input name="title[]" title="' + rand + '" class="form-control col-xl-8 col-sm-7" id="validationCustom01"' +
+                '                    type="text" ><input type="hidden" value="' + rand + '" name="slide_code[]">' +
+                '               ' +
+                '            </div>' +
+                '            <div class="form-group mb-3 row"><label for="validationCustom02" class="col-xl-3 col-sm-4 mb-0">Subtitle' +
+                '                    :</label><input subtitle="' + rand + '" name="subtitle[]" class="form-control col-xl-8 col-sm-7" type="text" >' +
+                '               ' +
+                '            </div>' +
+                '            <div class="form-group mb-3 row"><label for="validationCustom02" class="col-xl-3 col-sm-4 mb-0">Button One' +
+                '                    Title :</label><input btn_one_title="' + rand + '" name="btn_one_title[]" class="form-control col-xl-8 col-sm-7" type="text"' +
+                '                    >' +
+                '               ' +
+                '            </div>' +
+                '            <div class="form-group mb-3 row"><label for="validationCustom02" class="col-xl-3 col-sm-4 mb-0">Button One' +
+                '                    Link :</label><input  btn_one_link="' + rand + '" name="btn_one_link[]" class="form-control col-xl-8 col-sm-7" type="text">' +
+                '               ' +
+                '            </div>' +
+                '            <div class="form-group mb-3 row"><label for="validationCustom02" class="col-xl-3 col-sm-4 mb-0">Button Two' +
+                '                    Title :</label><input btn_two_title="' + rand + '" name="btn_two_title[]" class="form-control col-xl-8 col-sm-7" type="text"' +
+                '                    >' +
+                '               ' +
+                '            </div>' +
+                '            <div class="form-group mb-3 row"><label for="validationCustom02" class="col-xl-3 col-sm-4 mb-0">Button Two' +
+                '                    Link :</label><input btn_two_link="' + rand + '" name="btn_two_link[]" class="form-control col-xl-8 col-sm-7" type="text">' +
+                '               ' +
+                '            </div>' + 
+                            '<div class="form-group row add-product">'+
+                            ''+
+'                                        <div class="col-xl-4 col-sm-4 col-4">'+
+'                                            <label class=" d-block pb-2 text-uppercase">Background Image</label>'+
+'                                            <img style="max-height: 200px; width:auto" id="bg_image-load' + rand + '" class=" img-fluid mb-3" src="" alt="">'+
+'                                            <ul class="file-upload-product">'+
+'                                                <li>'+
+'                                                    <div style="background: #333; border-radius: 3px;width: 100px; height: 30px;" class="box-input-file bg-black">'+
+'                                                      '+
+'                                                      <input name="bg_img[]"   id="bg_image' + rand + '" class="upload" type="file">'+
+'                                                     <i class="fa fa-upload" aria-hidden="true"></i>'+
+'                                                        <label style="font-size: 12px;" for="bg_image" class=" fs mb-0 pl-1 text-white">UPLOAD</label>'+
+'                                                    </div>'+
+'                                                </li>'+
+''+
+'                                            </ul>'+
+'                                        </div>'+
+''+'                                </div>' +
+                '        </div>' +
+                '    </div>' +
+                '</div>');
+
+        draggable();
+        // image Preview
+        imgPreviewFunction('#bg_image'+rand+'','#bg_image-load'+rand+'');
+
+        });
+
+  
+
+
+
+
+      
+    
 
 
 

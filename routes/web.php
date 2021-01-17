@@ -26,6 +26,7 @@ Route::resource('post-category', 'App\Http\Controllers\PostCategoryController')-
 //Frontend 
 Route::get('/', 'App\Http\Controllers\FrontendController@index')->name('frontend.index');
 
+
 //Settings
 Route::group(['prefix' => 'settings', 'middleware'=>'userrolecheck', 'namespace' => 'App\Http\Controllers'], function () {
     Route::get("change-logo","SettingsController@logoIndex")->name('logo.index');
@@ -46,6 +47,13 @@ Route::group(['prefix' => 'settings', 'middleware'=>'userrolecheck', 'namespace'
 Route::group(['prefix' => 'homepage', 'middleware' => 'userrolecheck', 'namespace' => 'App\Http\Controllers'], function () {
     Route::get('about', 'HomepageController@aboutIndex')->name('about.index');
     Route::put('about', 'HomepageController@aboutUpdate')->name('about.update');
+    Route::get('setup','HomepageController@setup')->name('home.setup');
+    Route::put('setup-update','HomepageController@setupUpdate')->name('setup.update');
+    Route::get('services','HomepageController@servicesIndex')->name('services.index');
+    Route::put('service-update', 'HomepageController@serviceUpdate')->name('service.update');
+    Route::get('vision','HomepageController@visionIndex')->name('vision.index');
+    Route::put('vision-update', 'HomepageController@visionUpdate')->name('vision.update');
+
 });
 
 
@@ -70,6 +78,7 @@ Route::group(['prefix' => 'slider', 'namespace' => 'App\Http\Controllers', 'midd
     Route::get('delete/{id}','SliderController@delete')->name('slider.delete');
     Route::get('edit/{id}', 'SliderController@edit')->name('slider.edit');
     Route::put('update','SliderController@update')->name('slider.update');
+    Route::post('img-slider', 'SliderController@imgSliderCreate')->name('img.slider.create');
 });
 
 

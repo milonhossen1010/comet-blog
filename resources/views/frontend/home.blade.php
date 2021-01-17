@@ -22,6 +22,13 @@ $site_identity = json_decode($json);
 */
 $about_json = $homepage -> about;
 $about = json_decode($about_json);
+
+//Services ared
+$services = json_decode($homepage -> expert);
+
+//vision
+$vision = json_decode($homepage -> vision);
+
 @endphp
 @section('frontend-main')
 <!-- Home section-->
@@ -56,12 +63,12 @@ $about = json_decode($about_json);
         <div class="row">
             <div class="col-md-6 col-sm-4 img-side img-left mb-0">
                 <div class="img-holder">
-                    <img src="{{ asset('/') }}comet/images/bg/33.jpg" alt="" class="bg-img">
+                    <img src="{{ asset('/') }}media/images/pages/homepage/{{ $services -> bg_img }}" alt="" class="bg-img">
                     <div class="centrize">
                         <div class="v-center">
                             <div class="title txt-xs-center">
-                                <h4 class="upper">This is what we love to do.</h4>
-                                <h3>Expertise<span class="red-dot"></span></h3>
+                                <h4 class="upper">{{ $services -> subtitle }}</h4>
+                                <h3>{{ $services -> title }}<span class="red-dot"></span></h3>
                                 <hr>
                             </div>
                         </div>
@@ -75,40 +82,36 @@ $about = json_decode($about_json);
                         <div class="col-sm-6 border-bottom border-right">
                             <div class="service"><i class="icon-focus"></i><span class="back-icon"><i
                                         class="icon-focus"></i></span>
-                                <h4>Branding</h4>
+                                <h4>{{ $services -> s_title1 }}</h4>
                                 <hr>
-                                <p class="alt-paragraph">Facilis doloribus illum quis, expedita mollitia voluptate non
-                                    iure, perspiciatis repellat eveniet volup.</p>
+                                <p class="alt-paragraph">{{ $services -> s_text1 }}</p>
                             </div>
                             <!-- end of service-->
                         </div>
                         <div class="col-sm-6 border-bottom">
                             <div class="service"><i class="icon-layers"></i><span class="back-icon"><i
                                         class="icon-layers"></i></span>
-                                <h4>Interactive</h4>
+                                <h4>{{ $services -> s_title2 }}</h4>
                                 <hr>
-                                <p class="alt-paragraph">Commodi totam esse quis alias, nihil voluptas repellat magni,
-                                    id fuga perspiciatis, ut quia beatae, accus.</p>
+                                <p class="alt-paragraph">{{ $services -> s_text2 }}</p>
                             </div>
                             <!-- end of service-->
                         </div>
                         <div class="col-sm-6 border-bottom border-right">
                             <div class="service"><i class="icon-mobile"></i><span class="back-icon"><i
                                         class="icon-mobile"></i></span>
-                                <h4>Production</h4>
+                                <h4>{{ $services -> s_title3 }}</h4>
                                 <hr>
-                                <p class="alt-paragraph">Doloribus qui asperiores nisi placeat volup eum, nemo est,
-                                    praesentium fuga alias sit quis atque accus.</p>
+                                <p class="alt-paragraph">{{ $services -> s_text3 }}</p>
                             </div>
                             <!-- end of service-->
                         </div>
                         <div class="col-sm-6 border-bottom">
                             <div class="service"><i class="icon-globe"></i><span class="back-icon"><i
                                         class="icon-globe"></i></span>
-                                <h4>Editing</h4>
+                                <h4>{{ $services -> s_title4 }}</h4>
                                 <hr>
-                                <p class="alt-paragraph">Aliquid repellat facilis quis. Sequi excepturi quis dolorem
-                                    eligendi deleniti fuga rerum itaque.</p>
+                                <p class="alt-paragraph">{{ $services -> s_text4 }}</p>
                             </div>
                             <!-- end of service-->
                         </div>
@@ -125,7 +128,7 @@ $about = json_decode($about_json);
         <div class="row">
             <div class="col-md-6 col-sm-4 img-side img-right">
                 <div class="img-holder">
-                    <img src="{{ asset('/') }}comet/images/bg/10.jpg" alt="" class="bg-img">
+                    <img src="{{ asset('/') }}media/images/pages/homepage/{{ $vision -> bg_img }}" alt="" class="bg-img">
                 </div>
             </div>
             <!-- end of side background image-->
@@ -136,36 +139,36 @@ $about = json_decode($about_json);
         <div class="row">
             <div class="col-md-5 col-sm-8">
                 <div class="title">
-                    <h4 class="upper">Not just code.</h4>
-                    <h3>The Vision<span class="red-dot"></span></h3>
+                    <h4 class="upper">{{ $vision -> subtitle }}</h4>
+                    <h3>{{ $vision -> title }}<span class="red-dot"></span></h3>
                     <hr>
                 </div>
                 <div class="row">
                     <div class="col-sm-6">
                         <div class="text-box">
-                            <h4 class="upper small-heading">Strategy</h4>
-                            <p>Natus totam adipisci illum aut nihil consequuntur ut, ducimus alias iusto facili.</p>
+                            <h4 class="upper small-heading">{{ $vision -> s_title1 }}</h4>
+                            <p>{{ $vision -> s_text1 }}</p>
                         </div>
                         <!-- end of text box-->
                     </div>
                     <div class="col-sm-6">
                         <div class="text-box">
-                            <h4 class="upper small-heading">Design</h4>
-                            <p>Nisi, ut commodi dolor, quae doloremque earum alias accusantium sint.</p>
+                            <h4 class="upper small-heading">{{ $vision -> s_title2 }}</h4>
+                            <p>{{ $vision -> s_text2 }}</p>
                         </div>
                         <!-- end of text box-->
                     </div>
                     <div class="col-sm-6">
                         <div class="text-box">
-                            <h4 class="upper small-heading">Skills</h4>
-                            <p>Nesciunt est eaque, expedita cum minima reprehenderit? Harum vero dolorum.</p>
+                            <h4 class="upper small-heading">{{ $vision -> s_title3 }}</h4>
+                            <p>{{ $vision -> s_text3 }}</p>
                         </div>
                         <!-- end of text box-->
                     </div>
                     <div class="col-sm-6">
                         <div class="text-box">
-                            <h4 class="upper small-heading">Power</h4>
-                            <p>Fuga ipsum, repellendus? Architecto commodi magni non nihil et iusto.</p>
+                            <h4 class="upper small-heading">{{ $vision -> s_title4 }}</h4>
+                            <p>{{ $vision -> s_text4 }}</p>
                         </div>
                         <!-- end of text box-->
                     </div>

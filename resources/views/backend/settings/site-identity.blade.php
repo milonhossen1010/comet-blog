@@ -24,13 +24,13 @@
                                         <div class="digital-add needs-validation " style="margin-bottom: 50px">
                                             <div class="form-group">
                                                 <label for="validationCustom05" class="col-form-label pt-0 text-uppercase"> Site Title</label>
-                                                <input name="title" value="{{ $identity->title }}" class="form-control" id="validationCustom05" type="text" required="">
+                                                <input name="title" value="{{ $identity->title }}" class="form-control" id="validationCustom05" type="text"
                                             </div>
                                             <div class="form-group">
                                                 <label class="col-form-label text-uppercase">Tagline</label>
-                                                <input name="tagline" value="{{ $identity->tagline }}" class="form-control" id="validationCustom01" type="text" required="">
-                                            </div>
-                                         
+                                                <input name="tagline" value="{{ $identity->tagline }}" class="form-control" id="validationCustom01" type="text" >
+                                            </div> 
+
                                         </div>
                                       
                                         <div class="form-group row add-product">

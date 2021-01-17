@@ -80,7 +80,7 @@
  <script src="{{ asset('/') }}assets/js/lobibox/script.js"></script>
 
  <!--script admin-->
- <script src="{{ asset('/') }}assets/js/admin-script.js"></script>
+ <script src="{{ asset('/') }}assets/js/admin-script.js"></script> 
  <script src="{{ asset('/') }}assets/js/my-editor/script.js"></script>
  <script src="{{ asset('/') }}assets/js/custom-js/script.js"></script>
 
