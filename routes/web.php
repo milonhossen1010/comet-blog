@@ -53,6 +53,8 @@ Route::group(['prefix' => 'homepage', 'middleware' => 'userrolecheck', 'namespac
     Route::put('service-update', 'HomepageController@serviceUpdate')->name('service.update');
     Route::get('vision','HomepageController@visionIndex')->name('vision.index');
     Route::put('vision-update', 'HomepageController@visionUpdate')->name('vision.update');
+    Route::get('testimonial', 'HomepageController@testimonialIndex')->name('testimonial.index');
+    Route::post('testimonial-create', 'HomepageController@testimonialUpdate')->name('testimonial.update');
 
 });
 
@@ -79,6 +81,7 @@ Route::group(['prefix' => 'slider', 'namespace' => 'App\Http\Controllers', 'midd
     Route::get('edit/{id}', 'SliderController@edit')->name('slider.edit');
     Route::put('update','SliderController@update')->name('slider.update');
     Route::post('img-slider', 'SliderController@imgSliderCreate')->name('img.slider.create');
+    Route::put('img-slider-update','SliderController@imgSliderUpdate')->name('img.slider.update');
 });
 
 

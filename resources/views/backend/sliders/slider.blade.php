@@ -90,7 +90,9 @@
                                 <a href="#" id="add-slide" class="btn btn-primary">Add Slide</a>
                             </div>
 
-                            <!-- all slider show -->
+                            <!-- ================
+                                all slider show 
+                            =====================-->
                             <div class="row products-admin ratio_asos pt-15"
                                 style="background-color: #f8f8f9;background-color: #f8f8f9;padding-top: 30px;margin-top: 100px; border-radius:5px;">
 
@@ -154,7 +156,7 @@
                         =======================--->
                         <div class="tab-pane fade" id="img_slider" role="tabpanel" aria-labelledby="img_slider-tabs">
                             <form action="{{ route('img.slider.create') }}" method="POST"
-                                class="needs-validation  add-product-form" novalidate="">
+                                class="needs-validation  add-product-form" enctype="multipart/form-data" novalidate="">
                                 @csrf
                                 <div class="form-group mb-3 row">
                                     <label for="validationCustom02" class="col-xl-3 col-sm-4 mb-0">Slider name
@@ -184,11 +186,13 @@
                                 <a href="#" id="add-img-slide" class="btn btn-primary">Add Slide</a>
                             </div>
 
-                            <!-- all slider show -->
+                            <!-- ==============
+                                all slider show 
+                            =====================-->
                             <div class="row products-admin ratio_asos pt-15"
                                 style="background-color: #f8f8f9;background-color: #f8f8f9;padding-top: 30px;margin-top: 100px; border-radius:5px;">
 
-                                @foreach ($sliders as $slider)
+                                @foreach ($img_sliders as $slider)
 
 
                                 <div class="col-xl-4 col-sm-6">

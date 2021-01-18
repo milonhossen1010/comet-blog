@@ -183,6 +183,22 @@ class HomepageController extends Controller
     }
 
 
+    /**
+     * Testimonial function
+     *
+     * @return void
+     */
+    public function testimonialIndex()
+    {
+        return view('backend.pages.home.testimonial');
+    }
+
+    public function testimonialUpdate(Request $request)
+    {
+        return $request-> all();
+    }
+
+
 
 
 

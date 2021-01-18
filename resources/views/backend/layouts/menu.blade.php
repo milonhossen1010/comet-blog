@@ -37,7 +37,7 @@
 			</a>
 			</li>
 
-			<li class="{{ ($route=='about.index'|| $route== 'vision.index' || $route == 'services.index' || ($route=='home.setup'? 'active' : '')) ? 'active' : ''}} {{ (Auth::user()->role!=='administrator') ? 'd-none' : ''  }}">
+			<li class="{{ ($route=='about.index'|| $route=='testimonial.index' || $route== 'vision.index' || $route == 'services.index' || ($route=='home.setup'? 'active' : '')) ? 'active' : ''}} {{ (Auth::user()->role!=='administrator') ? 'd-none' : ''  }}">
 				<a class="sidebar-header" href="">
 					<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line></svg>
 					<span>Home Page</span><i class="fa fa-angle-right pull-right"></i>
@@ -47,7 +47,7 @@
 					<li class="{{ ($route=='about.index')? 'active' :'' }}"><a class="{{ ($route=='about.index') ? 'active' : '' }}" href="{{ route('about.index') }}"><i class="fa fa-circle"></i>About</a></li>
 					<li class="{{ ($route=='services.index')? 'active' : '' }}"><a class="{{ ($route=='services.index')? 'active' : '' }}" href="{{ route('services.index') }}"><i class="fa fa-circle"></i>Expertise</a></li>
 					<li class="{{ ($route== 'vision.index')? 'active' : '' }}"><a class="{{ ($route=='vision.index')? 'active' : '' }}" href="{{ route('vision.index') }}"><i class="fa fa-circle"></i>Vision</a></li>
-					<li class=""><a class="" href="#"><i class="fa fa-circle"></i>Testimonials</a></li>
+					<li class="{{ ($route=='testimonial.index')? 'active' : '' }}"><a class="{{ ($route=='testimonial.index')? 'active' : '' }}" href="{{ route('testimonial.index') }}"><i class="fa fa-circle"></i>Testimonials</a></li>
 					<li class=""><a class="" href="#"><i class="fa fa-circle"></i>Blog</a></li>
 					<li class="{{ ($route=='home.setup')? 'active' : '' }}"><a class="{{ ($route=='home.setup')? 'active' : '' }}" href="{{ route('home.setup') }}"><i class="fa fa-circle"></i>Setup</a></li>
 				</ul>

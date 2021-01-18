@@ -6,13 +6,16 @@ use App\Models\Slider;
 use Illuminate\Http\Request;
 use GuzzleHttp\Promise\Create;
 
+use function GuzzleHttp\json_decode;
+
 class SliderController extends Controller
 {
     //Slider view
     public function sliderIndex()
     {
-        $sliders = Slider::latest()->get();
-        return view('backend.sliders.slider', compact('sliders'));
+        $sliders = Slider::latest()->get()->where('slider_type','video');
+        $img_sliders = Slider::latest()->get()->where('slider_type','Image');
+        return view('backend.sliders.slider', compact('sliders','img_sliders'));
     }
 
     //Slider data send database
@@ -56,11 +59,7 @@ class SliderController extends Controller
     }
 
     //Slider demo preview
-    public function sliderView()
-    {
-        $slider = Slider::find(5);
-       // return view('frontend.layouts.particals.slider', compact('slider'));
-    }
+ 
 
     public function sliderPreviewId($id)
     {
@@ -142,10 +141,111 @@ class SliderController extends Controller
      */
     public function imgSliderCreate(Request $request)
     {
-        return $request -> all();
+        $bg_imgs = $request->file('bg_img');
+
+        if( $request -> hasFile('bg_img') ){
+            foreach($bg_imgs as $img){
+                $bg_img ='sliders-images-'. rand(1,1000).'.'. $img-> getClientOriginalExtension();
+                $img-> move(public_path('media/images/sliders'), $bg_img );
+                $bg_img_data[]= $bg_img;
+            }
+       
+        } 
+
+
+        $slide_count = count($request->title); 
+
+        $all_slides = [];
+        for($i=0; $i < $slide_count; $i++){
+           $slide_array = [
+            'slide_code' => $request-> slide_code[$i],
+            'title' => $request-> title[$i],
+            'subtitle' => $request-> subtitle[$i],
+            'btn_one_title' => $request-> btn_one_title[$i],
+            'btn_one_link' => $request-> btn_one_link[$i],
+            'btn_two_title' => $request-> btn_two_title[$i],
+            'btn_two_link' => $request-> btn_two_link[$i],
+            'bg_img' => $bg_img_data[$i]
+           ];
+
+           array_push($all_slides, $slide_array );
+        }
+
+        $slides_array =[
+            'all_slides' => $all_slides,
+            
+        ];
+       
+        $json_data = json_encode($slides_array);
+
+       Slider::create([
+           'slider_name' => $request -> slider_name,
+           'slider_type' => 'Image',
+           'all_slides' => $json_data 
+       ]);
+
+       return redirect()->back()->with('success','Slider added successful!');
     }
 
 
+    /**
+     * Image slider update function
+     *
+     * @param Request $request
+     * @return void
+     */
+    public function imgSliderUpdate(Request $request)
+    {
+        
+      // $array_data -> bg_img;
+
+        $bg_imgs = $request->file('bg_img');
+ 
+        if( $request -> hasFile('bg_img') ){
+            foreach($bg_imgs as $img){
+                $bg_img ='sliders-images-'. rand(1,1000).'.'. $img-> getClientOriginalExtension();
+               // $img-> move(public_path('media/images/sliders'), $bg_img );
+                $bg_img_data[]= $bg_img;
+            }
+       
+        } 
+ 
+
+        // $bg_img_data= $request->old_bg_img;
+
+        $slide_count = count($request->title); 
+
+        $all_slides = [];
+        for($i=0; $i < $slide_count; $i++){
+           $slide_array = [
+            'slide_code' => $request-> slide_code[$i],
+            'title' => $request-> title[$i],
+            'subtitle' => $request-> subtitle[$i],
+            'btn_one_title' => $request-> btn_one_title[$i],
+            'btn_one_link' => $request-> btn_one_link[$i],
+            'btn_two_title' => $request-> btn_two_title[$i],
+            'btn_two_link' => $request-> btn_two_link[$i],
+           // 'bg_img' => $bg_img_data[$i]
+           
+           ];
+
+           array_push($all_slides, $slide_array );
+        }
+
+        $slides_array =[
+            'all_slides' => $all_slides,
+            
+        ];
+       
+        $json_data = json_encode($slides_array);
+
+
+        return   $all_slides ;
+
+
+
+
+    }
 
 
 

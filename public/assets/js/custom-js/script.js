@@ -5,7 +5,7 @@
             $("#logout-form").submit();
         });
 
-        
+
         //Img Preview Function
         function imgPreviewFunction(id, load_url) {
             $(id).change(function (e) {
@@ -345,7 +345,7 @@
 '                                                <li>'+
 '                                                    <div style="background: #333; border-radius: 3px;width: 100px; height: 30px;" class="box-input-file bg-black">'+
 '                                                      '+
-'                                                      <input name="bg_img[]"   id="bg_image' + rand + '" class="upload" type="file">'+
+'                                                      <input name="bg_img[]" required=""  id="bg_image' + rand + '" class="upload" type="file">'+
 '                                                     <i class="fa fa-upload" aria-hidden="true"></i>'+
 '                                                        <label style="font-size: 12px;" for="bg_image" class=" fs mb-0 pl-1 text-white">UPLOAD</label>'+
 '                                                    </div>'+
@@ -364,6 +364,58 @@
 
         });
 
+
+      
+
+        //Slider edit js 
+        // $(document).on('click', '#modal-add-slide', function (e) {
+        //     e.preventDefault();
+        //     let rand = Math.floor(Math.random() * 1000);
+
+        //     $(".modal_slider_content").append('<div class="draggable card" draggable="true" id="slide-card-' + rand + '"  >' +
+        //         '    <div data-parent="#accordion" class="card-header custom-card" style="padding: 25px; cursor: pointer;" data-toggle="collapse"' +
+        //         '        data-target="#slide-' + rand + '">' +
+        //         '        <h4 class=" mb-0 " style="color:#ff8084">Slide-' + rand + '<Span class="duplicate-close "><a id="slide-duplicate" class="' + rand + '" duplicate_id="' + rand + '" href="#"><i class="fa fa-files-o" aria-hidden="true"></i></a><a href="#" remove_id="' + rand + '"' +
+        //         '                id="slide-remove-btn" ><i class="fa fa-times" aria-hidden="true"></i></a></Span></h4>' +
+        //         '    </div>' +
+        //         '    <div id="slide-' + rand + '" class="card-body collapse ">' +
+        //         '        <div class="form">' +
+        //         '            <div class="form-group mb-3 row"><label for="validationCustom01"  class="col-xl-3 col-sm-4 mb-0">Title' +
+        //         '                    :</label><input name="title[]" title="' + rand + '" class="form-control col-xl-8 col-sm-7" id="validationCustom01"' +
+        //         '                    type="text" ><input type="hidden" value="' + rand + '" name="slide_code[]">' +
+        //         '               ' +
+        //         '            </div>' +
+        //         '            <div class="form-group mb-3 row"><label for="validationCustom02" class="col-xl-3 col-sm-4 mb-0">Subtitle' +
+        //         '                    :</label><input subtitle="' + rand + '" name="subtitle[]" class="form-control col-xl-8 col-sm-7" type="text" >' +
+        //         '               ' +
+        //         '            </div>' +
+        //         '            <div class="form-group mb-3 row"><label for="validationCustom02" class="col-xl-3 col-sm-4 mb-0">Button One' +
+        //         '                    Title :</label><input btn_one_title="' + rand + '" name="btn_one_title[]" class="form-control col-xl-8 col-sm-7" type="text"' +
+        //         '                    >' +
+        //         '               ' +
+        //         '            </div>' +
+        //         '            <div class="form-group mb-3 row"><label for="validationCustom02" class="col-xl-3 col-sm-4 mb-0">Button One' +
+        //         '                    Link :</label><input  btn_one_link="' + rand + '" name="btn_one_link[]" class="form-control col-xl-8 col-sm-7" type="text">' +
+        //         '               ' +
+        //         '            </div>' +
+        //         '            <div class="form-group mb-3 row"><label for="validationCustom02" class="col-xl-3 col-sm-4 mb-0">Button Two' +
+        //         '                    Title :</label><input btn_two_title="' + rand + '" name="btn_two_title[]" class="form-control col-xl-8 col-sm-7" type="text"' +
+        //         '                    >' +
+        //         '               ' +
+        //         '            </div>' +
+        //         '            <div class="form-group mb-3 row"><label for="validationCustom02" class="col-xl-3 col-sm-4 mb-0">Button Two' +
+        //         '                    Link :</label><input btn_two_link="' + rand + '" name="btn_two_link[]" class="form-control col-xl-8 col-sm-7" type="text">' +
+        //         '               ' +
+        //         '            </div>' +
+        //         '        </div>' +
+        //         '    </div>' +
+        //         '</div>');
+
+        //     // draggable();
+
+
+        // });
+
   
 
 
@@ -373,6 +425,76 @@
     
 
 
+
+        /**
+         * Testimonial carousel
+         */
+        $(document).on('click', '#add-testimonial', function (e) {
+            e.preventDefault();
+            let rand = Math.floor(Math.random() * 1000);
+
+            $(".comet-slider-container").append('<div class="draggable card" draggable="true" id="slide-card-' + rand + '"  >' +
+                '    <div data-parent="#accordion" class="card-header custom-card" style="padding: 25px; cursor: pointer;" data-toggle="collapse"' +
+                '        data-target="#slide-' + rand + '">' +
+                '        <h4 class=" mb-0 " style="color:#ff8084">Slide-' + rand + '<Span class="duplicate-close "><a id="test-slide-duplicate" class="' + rand + '" duplicate_id="' + rand + '" href="#"><i class="fa fa-files-o" aria-hidden="true"></i></a><a href="#" remove_id="' + rand + '"' +
+                '                id="slide-remove-btn" ><i class="fa fa-times" aria-hidden="true"></i></a></Span></h4>' +
+                '    </div>' +
+                '    <div id="slide-' + rand + '" class="card-body collapse ">' +
+                '        <div class="form">' +
+                '            <div class="form-group mb-3 row align-items-start"><label for="validationCustom01"  class="col-xl-2 col-sm-4 mb-0">Title' +
+                '                    :</label><input name="title[]" title="' + rand + '" class="form-control col-xl-8 col-sm-7" id="validationCustom01"' +
+                '                    type="text" ><input type="hidden" value="' + rand + '" name="slide_code[]">' +
+                '               ' +
+                '            </div>' +
+                '            <div class="form-group mb-3 row align-items-start"><label for="validationCustom02" class="col-xl-2 col-sm-4 mb-0">Text' +
+                '                    :</label> <textarea text="' + rand + '" name="text[]" class="form-control col-xl-8 col-sm-7" rows="3"></textarea> ' +
+                '               ' +
+                '            </div>'  +
+                '        </div>' +
+                '    </div>' +
+                '</div>');
+
+            draggable();
+
+
+        });
+
+
+          // Slide duplicate 
+          $(document).on('click', '#slide-duplicate', function (e) {
+            e.preventDefault();
+            let duplicate_id = $(this).attr('duplicate_id');
+            let rand = Math.floor(Math.random() * 1000);
+            let title = $('input[title=' + duplicate_id + ']').val();
+            let subtitle = $('input[subtitle=' + duplicate_id + ']').val(); 
+
+
+
+
+            $(".comet-slider-container").append('<div class="draggable card" draggable="true" id="slide-card-\' + rand + \'"  >\' +'+
+            '                \'    <div data-parent="#accordion" class="card-header custom-card" style="padding: 25px; cursor: pointer;" data-toggle="collapse"\' +'+
+            '                \'        data-target="#slide-\' + rand + \'">\' +'+
+            '                \'        <h4 class=" mb-0 " style="color:#ff8084">Slide-\' + rand + \'<Span class="duplicate-close "><a id="testimonial-duplicate" class="\' + rand + \'" duplicate_id="\' + rand + \'" href="#"><i class="fa fa-files-o" aria-hidden="true"></i></a><a href="#" remove_id="\' + rand + \'"\' +'+
+            '                \'                id="slide-remove-btn" ><i class="fa fa-times" aria-hidden="true"></i></a></Span></h4>\' +'+
+            '                \'    </div>\' +'+
+            '                \'    <div id="slide-\' + rand + \'" class="card-body collapse ">\' +'+
+            '                \'        <div class="form">\' +'+
+            '                \'            <div class="form-group mb-3 row"><label for="validationCustom01"  class="col-xl-3 col-sm-4 mb-0">Title\' +'+
+            '                \'                    :</label><input value="\' + title + \'" name="title[]" title="\' + rand + \'" class="form-control col-xl-8 col-sm-7" id="validationCustom01"\' +'+
+            '                \'                    type="text" ><input type="hidden" value="\' + rand + \'" name="slide_code[]">\' +'+
+            '                \'               \' +'+
+            '                \'            </div>\' +'+
+            '                \'            <div class="form-group mb-3 row"><label for="validationCustom02" class="col-xl-3 col-sm-4 mb-0">Subtitle\' +'+
+            '                \'                    :</label><input value="\' + subtitle + \'" subtitle="\' + rand + \'" name="subtitle[]" class="form-control col-xl-8 col-sm-7" type="text" >\' +'+
+            '                \'               \' +'+
+            '                \'            </div>\' +'+
+            '                \'            '+
+            '                \'        </div>\' +'+
+            '                \'    </div>\' +'+
+            '                \'</div>');
+
+            return false;
+        });
 
 
 
