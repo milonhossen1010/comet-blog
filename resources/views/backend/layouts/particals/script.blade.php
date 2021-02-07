@@ -79,6 +79,9 @@
  <script src="{{ asset('/') }}assets/js/lobibox/notifications.js"></script>
  <script src="{{ asset('/') }}assets/js/lobibox/script.js"></script>
 
+ <!-- Alertify -->
+ <script src="{{ asset('/') }}assets/js/alertify/alertify.min.js"></script>
+
  <!--script admin-->
  <script src="{{ asset('/') }}assets/js/admin-script.js"></script> 
  <script src="{{ asset('/') }}assets/js/my-editor/script.js"></script>

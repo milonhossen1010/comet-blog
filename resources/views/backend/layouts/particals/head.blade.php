@@ -52,6 +52,10 @@
     <!-- Toastr css-->
     <link rel="stylesheet" type="text/css" href="{{ asset('/') }}assets/css/toastr.min.css">
 
+    <!-- Alertify css-->
+    <link rel="stylesheet" type="text/css" href="{{ asset('/') }}assets/css/alertify/alertify.css">
+    <link rel="stylesheet" type="text/css" href="{{ asset('/') }}assets/css/alertify/alertify.default.css">
+
     <!-- Bootstrap css-->
     <link rel="stylesheet" type="text/css" href="{{ asset('/') }}assets/css/bootstrap.css">
 

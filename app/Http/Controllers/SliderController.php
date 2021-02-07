@@ -59,8 +59,6 @@ class SliderController extends Controller
     }
 
     //Slider demo preview
- 
-
     public function sliderPreviewId($id)
     {
         $slider = Slider::find($id);

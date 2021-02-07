@@ -85,3 +85,10 @@ Route::group(['prefix' => 'slider', 'namespace' => 'App\Http\Controllers', 'midd
 });
 
 
+Route::group(['prefix' => 'project', 'namespace' => 'App\Http\Controllers', 'middleware' => 'userrolecheck'], function () {
+    Route::get('category','ProjectCategoryController@index')->name('project.category.index');
+    Route::post('category-store','ProjectCategoryController@store')->name('project.category.store');
+    Route::get('category-edit/{id}', 'ProjectCategoryController@edit')-> name('project.category.edit');
+    Route::put('project-category-update', 'ProjectCategoryController@update')-> name('project.category.update');
+    Route::get('create','ProjectController@store')->name('project.store');
+});

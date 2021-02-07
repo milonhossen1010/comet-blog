@@ -190,12 +190,41 @@ class HomepageController extends Controller
      */
     public function testimonialIndex()
     {
-        return view('backend.pages.home.testimonial');
+        $homepage = Homepage::find(1);
+        return view('backend.pages.home.testimonial', compact('homepage'));
     }
 
     public function testimonialUpdate(Request $request)
     {
-        return $request-> all();
+   
+        $slide_count = count($request->title); 
+
+        $all_slides = [];
+        for($i=0; $i < $slide_count; $i++){
+           $slide_array = [
+                    'slide_code' => $request-> slide_code[$i],
+                    'title' => $request-> title[$i],
+                    'text' => $request-> text[$i]
+           ];
+
+           array_push($all_slides, $slide_array );
+        }
+       
+
+
+        $slides_array =[
+            'test_title' => $request->testimonial_title,
+            'all_slides' => $all_slides
+        ];
+
+        $all_slide_json = json_encode($slides_array);
+
+      $homepage = Homepage::find(1);
+      $homepage -> testimonial = $all_slide_json;
+      $homepage -> update();
+      
+      return redirect()->back()->with('success','Testimonial Updated successful!');
+
     }
 
 

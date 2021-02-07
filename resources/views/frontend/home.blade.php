@@ -29,7 +29,11 @@ $services = json_decode($homepage -> expert);
 //vision
 $vision = json_decode($homepage -> vision);
 
+//Testmonials 
+$testimonials = json_decode($homepage -> testimonial);
+
 @endphp
+ 
 @section('frontend-main')
 <!-- Home section-->
 <section id="home">
@@ -374,7 +378,7 @@ $vision = json_decode($homepage -> vision);
     <div class="parallax-overlay pb-50 pt-50">
         <div class="container">
             <div class="title center">
-                <h3>What They Say<span class="red-dot"></span></h3>
+                <h3>{{ $testimonials -> test_title }}<span class="red-dot"></span></h3>
                 <hr>
             </div>
             <div class="section-content">
@@ -382,20 +386,15 @@ $vision = json_decode($homepage -> vision);
                     data-options="{&quot;animation&quot;: &quot;slide&quot;, &quot;controlNav&quot;: true}"
                     class="flexslider nav-outside">
                     <ul class="slides">
+                        @foreach ($testimonials -> all_slides as $slide)                     
                         <li>
                             <blockquote>
-                                <p>"Blanditiis impedit omnis excepturi rem dolores! Ab consequuntur reiciendis eaque
-                                    atque."</p>
-                                <footer>Jon Snow - Google Inc.</footer>
+                                <p>"{{ $slide -> text }}"</p>
+                                <footer>{{ $slide -> title }}</footer>
                             </blockquote>
                         </li>
-                        <li>
-                            <blockquote>
-                                <p>"Dolorem natus, sint. Enim molestias expedita laboriosam perferendis possimus facere
-                                    nostrum laudantium vero."</p>
-                                <footer>Daenerys Targarien - Apple Inc.</footer>
-                            </blockquote>
-                        </li>
+                        @endforeach
+                       
                     </ul>
                 </div>
             </div>
